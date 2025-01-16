@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('artist');
+            $table->double('price');
+            $table->integer('stock');
             $table->timestamps();
             });
     }

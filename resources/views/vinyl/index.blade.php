@@ -19,7 +19,7 @@
                 <div class="border rounded-lg shadow-lg p-4">
                     <div class="text-center">
                         <h2 class="text-xl font-semibold">{{ $vinyl->name }}</h2>
-                        <p class="text-gray-600">door {{ $vinyl->artist }}</p>
+                        <p class="text-gray-600">door: {{ $vinyl->artist }}</p>
                     </div>
                     <div class="mt-4">
                         <a href="{{ route('vinyl.show', $vinyl->id) }}">
