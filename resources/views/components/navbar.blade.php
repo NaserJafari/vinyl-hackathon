@@ -5,10 +5,19 @@
         </div>
         <ul class="flex space-x-2">
             <x-navlink link="{{ route('welcome') }}">Home</x-navlink>
-            <x-navlink link="{{ route('welcome') }}">Vinyl</x-navlink>
+            <x-navlink link="{{ route('vinyl.index') }}">Vinyl</x-navlink>
             <x-navlink link="{{ route('welcome') }}">Chat</x-navlink>
-            <x-navlink link="{{ route('register') }}">Registreren</x-navlink>
-            <x-navlink link="{{ route('login') }}">Inloggen</x-navlink>
+            @if (Auth::check())
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit">
+                        Uitloggen
+                    </button>
+                </form>
+            @else
+                <x-navlink link="{{ route('login') }}">Inloggen</x-navlink>
+                <x-navlink link="{{ route('register') }}">Registreren</x-navlink>
+            @endif
         </ul>
     </div>
 </nav>
